@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Gestión — Medicina Veterinaria | UNIANDES</title>
+<meta name="description" content="Informe de gestión académica de la carrera de Medicina Veterinaria, periodo Octubre 2025 - Marzo 2026. Resultados de evaluaciones, remediales, repitencia y plan de arrastres.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="informe.css">
+</head>
+<body>
+<!-- Animated background -->
+<div class="bg-animation">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="bg-orb bg-orb-4"></div>
+</div>
+
+<!-- Navigation -->
+<nav class="top-nav" id="topNav">
+  <div class="nav-brand">
+    <div class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#navGrad)" stroke-width="2.5"/><path d="M10 20 L16 10 L22 20" stroke="url(#navGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="navGrad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs></svg>
+    </div>
+    <div>
+      <span class="nav-title">UNIANDES</span>
+      <span class="nav-subtitle">Medicina Veterinaria</span>
+    </div>
+  </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-page="page1" id="tabPage1" onclick="switchPage('page1')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Resumen & Evaluaciones
+    </button>
+    <button class="nav-tab" data-page="page2" id="tabPage2" onclick="switchPage('page2')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>
+      Remediales, Repitencia & Arrastres
+    </button>
+  </div>
+  <div class="nav-period">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    Oct 2025 — Mar 2026
+  </div>
+</nav>
+
+<!-- ============ PAGE 1 ============ -->
+<main class="page active" id="page1">
+
+  <!-- Header -->
+  <header class="report-header fade-in">
+    <div class="header-content">
+      <div class="header-badge">Informe de Gestión Académica</div>
+      <h1>Dirección de Carrera<br><span class="header-highlight">Medicina Veterinaria</span></h1>
+      <p class="header-desc">Resultados de evaluaciones finales y remediales, porcentajes de repitencia y plan de arrastres. <strong>Período académico Octubre 2025 – Marzo 2026</strong>. Sede Ambato.</p>
+      <div class="header-meta">
+        <span class="meta-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg> 192 estudiantes</span>
+        <span class="meta-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg> 40 asignaturas</span>
+        <span class="meta-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> 17 docentes</span>
+        <span class="meta-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> 971 registros académicos</span>
+      </div>
+      <p class="header-note">⚠️ <em>La base corresponde a registros académicos: un estudiante puede tener múltiples registros (uno por asignatura). El análisis distinguido por estudiante único se realiza mediante la cédula de identidad.</em></p>
+    </div>
+  </header>
+
+  <!-- KPI Cards -->
+  <section class="section fade-in" id="kpiSection">
+    <div class="section-header">
+      <h2><span class="section-icon">📊</span> Resumen Ejecutivo</h2>
+      <p class="section-sub">Indicadores clave del periodo — Registros académicos (excluye prácticas)</p>
+    </div>
+    <div class="kpi-grid" id="kpiGrid">
+      <!-- KPIs injected by JS -->
+    </div>
+  </section>
+
+  <!-- Evaluaciones Finales por Nivel -->
+  <section class="section fade-in" id="evalSection">
+    <div class="section-header">
+      <h2><span class="section-icon">🎓</span> Evaluaciones Finales por Nivel</h2>
+      <p class="section-sub">Tasa de aprobación y promedio de notas finales por semestre</p>
+    </div>
+    <div class="chart-row">
+      <div class="glass-card chart-card">
+        <h3 class="card-title">Aprobación vs Reprobación por Nivel</h3>
+        <div class="chart-wrap"><canvas id="chartAprobNivel"></canvas></div>
+      </div>
+      <div class="glass-card chart-card">
+        <h3 class="card-title">Promedio de Nota Final por Nivel</h3>
+        <div class="chart-wrap"><canvas id="chartPromNivel"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detalle por Asignatura -->
+  <section class="section fade-in" id="asigSection">
+    <div class="section-header">
+      <h2><span class="section-icon">📋</span> Detalle por Asignatura</h2>
+      <p class="section-sub">Ranking de rendimiento académico — filtrable por nivel</p>
+    </div>
+    <div class="filter-bar">
+      <label>Filtrar por nivel:</label>
+      <select id="filterNivel" onchange="filterAsignaturas()">
+        <option value="all">Todos los niveles</option>
+      </select>
+      <label style="margin-left:16px">Ordenar por:</label>
+      <select id="sortAsig" onchange="filterAsignaturas()">
+        <option value="tasa_asc">Menor aprobación primero</option>
+        <option value="tasa_desc">Mayor aprobación primero</option>
+        <option value="prom_asc">Menor promedio primero</option>
+        <option value="prom_desc">Mayor promedio primero</option>
+      </select>
+    </div>
+    <div class="glass-card">
+      <div class="table-container">
+        <table class="data-table" id="tableAsig">
+          <thead>
+            <tr>
+              <th>Asignatura</th><th>Nivel</th><th>Est.</th><th>Apr.</th><th>Rep.</th><th>% Apr.</th><th>Recup.</th><th>2da Mat.</th><th>Prom. Final</th><th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyAsig"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights Page 1 -->
+  <section class="section fade-in" id="insightsP1">
+    <div class="section-header">
+      <h2><span class="section-icon">💡</span> Insights — Evaluaciones Finales</h2>
+    </div>
+    <div class="insights-grid" id="insightsGrid1"></div>
+  </section>
+
+</main>
+
+<!-- ============ PAGE 2 ============ -->
+<main class="page" id="page2">
+
+  <!-- Remediales -->
+  <section class="section fade-in" id="remedialSection">
+    <div class="section-header">
+      <h2><span class="section-icon">🩺</span> Evaluaciones Remediales</h2>
+      <p class="section-sub">Estudiantes que rindieron examen de recuperación y resultados</p>
+    </div>
+    <div class="kpi-grid kpi-grid-sm" id="kpiRemedial"></div>
+    <div class="chart-row">
+      <div class="glass-card chart-card">
+        <h3 class="card-title">Remediales por Nivel</h3>
+        <div class="chart-wrap"><canvas id="chartRemedNivel"></canvas></div>
+      </div>
+      <div class="glass-card chart-card">
+        <h3 class="card-title">Éxito Remedial por Nivel</h3>
+        <div class="chart-wrap"><canvas id="chartRemedExito"></canvas></div>
+      </div>
+    </div>
+    <div class="glass-card" style="margin-top:24px;">
+      <h3 class="card-title">Top Asignaturas con más Remediales</h3>
+      <div class="table-container">
+        <table class="data-table" id="tableRemedial">
+          <thead><tr><th>Asignatura</th><th>Nivel</th><th>Remediales</th><th>Aprobaron</th><th>Reprobaron</th><th>% Éxito</th></tr></thead>
+          <tbody id="tbodyRemedial"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repitencia -->
+  <section class="section fade-in" id="repitenciaSection">
+    <div class="section-header">
+      <h2><span class="section-icon">🔄</span> Repitencia</h2>
+      <p class="section-sub">Estudiantes en segunda y tercera matrícula, y pérdida por faltas</p>
+    </div>
+    <div class="kpi-grid kpi-grid-sm" id="kpiRepitencia"></div>
+    <div class="chart-row">
+      <div class="glass-card chart-card">
+        <h3 class="card-title">Repitencia por Nivel</h3>
+        <div class="chart-wrap"><canvas id="chartRepitNivel"></canvas></div>
+      </div>
+      <div class="glass-card chart-card">
+        <h3 class="card-title">Estudiantes con Múltiples Reprobaciones</h3>
+        <div class="chart-wrap"><canvas id="chartMultiRep"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Arrastres -->
+  <section class="section fade-in" id="arrastreSection">
+    <div class="section-header">
+      <h2><span class="section-icon">📌</span> Plan de Arrastres</h2>
+      <p class="section-sub">Detalle de asignaturas cursadas en segunda/tercera matrícula</p>
+    </div>
+    <div class="glass-card">
+      <div class="table-container">
+        <table class="data-table" id="tableArrastre">
+          <thead><tr><th>Estudiante</th><th>Asignatura</th><th>Nivel</th><th>Tipo</th><th>Nota Final</th><th>Recup.</th><th>Estado</th></tr></thead>
+          <tbody id="tbodyArrastre"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alertas -->
+  <section class="section fade-in" id="alertSection">
+    <div class="section-header">
+      <h2><span class="section-icon">⚠️</span> Alertas y Focos de Atención</h2>
+    </div>
+    <div class="alerts-grid" id="alertsGrid"></div>
+  </section>
+
+  <!-- Insights Page 2 -->
+  <section class="section fade-in" id="insightsP2">
+    <div class="section-header">
+      <h2><span class="section-icon">💡</span> Insights — Remediales, Repitencia & Arrastres</h2>
+    </div>
+    <div class="insights-grid" id="insightsGrid2"></div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="report-footer">
+  <p>Universidad Regional Autónoma de los Andes — <strong>UNIANDES</strong> | Dirección de Carrera de Medicina Veterinaria | Sede Ambato</p>
+  <p class="footer-sub">Informe generado a partir de registros académicos del periodo Octubre 2025 – Marzo 2026. Datos procesados por cédula de identidad para análisis de estudiantes únicos.</p>
+</footer>
+
+<script src="informe.js"></script>
+</body>
+</html>
